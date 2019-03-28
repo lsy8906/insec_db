@@ -1,0 +1,13 @@
+<div class="inner">
+    <a href="/">메인</a>
+    <a href="/trainingDates">교육일정</a>
+    <ul>
+        <% if(isAuthenticated) { %>
+            <li><a href="/users">가입된아이디</a></li>
+            <li><a href="/logout">로그아웃</a></li>
+        <% } else { %>
+            <li><a href="/users/new">회원가입</a></li>
+            <li><a href="/login">로그인</a></li>
+        <% } %>
+    </ul>
+</div>

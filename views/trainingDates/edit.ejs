@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../head %>
+</head>
+
+<body>
+    <% include ../nav %>
+    <!-- conteont -->
+    <div id="content">
+        <div class="section section1">
+            <div class="inner">
+                <h2>인섹 교육 일정 DB</h2>
+                <form action="/trainingDates?_method=put" method="post" >
+                    <% trainingDates.forEach(function(trainingDate) { %>
+                        <fieldset>
+                            <h2><%= trainingDate.solutionName %></h2>
+                            <input type="text" id="id" name="id" value="<%= trainingDate._id %>" readonly><br />
+                            <label for="date">날짜</label>
+                            <input type="text" id="date" name="startDate" value="<%= trainingDate.startDate %>"> ~ <input type="text" id="date" name="endDate" value="<%= trainingDate.endDate %>">
+                            <label for="title">교육명</label>
+                            <input type="text" id="title" name="title" value="<%= trainingDate.title %>">
+                            <label for="period">수업일수</label>
+                            <input type="text" id="period" name="period" value="<%= trainingDate.period %>">
+                            <label for="time">시간</label>
+                            <input type="text" id="time" name="time" value="<%= trainingDate.time %>">
+                            <label for="place">장소</label>
+                            <input type="text" id="place" name="place" value="<%= trainingDate.place %>"><br>
+                        </fieldset>
+                    <% }) %>
+                    <div class="button">
+                        <button type="submit">완료</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //conteont -->
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../head %>
+</head>
+
+<body>
+    <% include ../nav %>
+    <!-- conteont -->
+    <div id="content">
+        <div class="section section1">
+            <div class="inner">
+                <h2>회원가입</h2>
+                <form action="/users" method="post">
+                    <fieldset>
+                        <label for="username">아이디</label>
+                        <input type="text" id="username" name="username" value="">
+                        <label for="password">비밀번호</label>
+                        <input type="password" id="password" name="password" value="">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" value="">
+                    </fieldset>
+                    <div class="button">
+                        <button type="submit">완료</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //conteont -->
+</body>
+
+</html>

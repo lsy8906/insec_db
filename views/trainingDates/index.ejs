@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../head %>
+</head>
+
+<body>
+    <% include ../nav %>
+    <!-- conteont -->
+    <div id="content">
+        <div class="section section1">
+            <div class="inner">
+                
+                    <a href="/trainingDates/new">추가</a>
+                    <a href="/trainingDates/edit">수정</a>
+                    <form action="/trainingDates?_method=delete" method="post">
+                        <a href="javascript:;" onclick="confirm('삭제하시겠습니까?')?this.parentElement.submit():null;">삭제</a>
+                    </form>
+                <h2>솔루션명 : 멍멍멍</h2>
+                <table class="schedule">
+					<colgroup>
+						<col style="width: 20%">
+						<col style="width: 44%">
+						<col style="width: 12%">
+						<col style="width: 12%">
+						<col style="width: 12%">
+                    </colgroup>
+                    <tr>
+						<th>날짜</th>
+						<th>교육명</th>
+						<th>수업 일수</th>
+						<th>시간</th>
+						<th>장소</th>
+                    </tr>
+                    <% if(trainingDates == null || trainingDates == 0) { %>
+                        <tr>
+                            <td class="noData" colspan="100">일정이 없습니다.</td>
+                        </tr>
+                    <% } %>
+                    <% trainingDates.forEach(function(trainingDate) { %>
+                        <% if(trainingDate.solutionName === '멍멍멍') { %>
+                            <tr>
+                                <td><span class="date"><%= trainingDate.startDate %></span> ~ <%= trainingDate.endDate %></td>
+                                <td><%= trainingDate.title %></td>
+                                <td>[ <%= trainingDate.period %>일 과정 ]</td>
+                                <td><%= trainingDate.time %></td>
+                                <td><%= trainingDate.place %></td>
+                            </tr>
+                        <% } %>
+                    <% }) %>
+                </table>
+                <h2>솔루션명 : 왈왈왈</h2>
+                <table class="schedule">
+                    <colgroup>
+                        <col style="width: 20%">
+                        <col style="width: 44%">
+                        <col style="width: 12%">
+                        <col style="width: 12%">
+                        <col style="width: 12%">
+                    </colgroup>
+                    <tr>
+                        <th>날짜</th>
+                        <th>교육명</th>
+                        <th>수업 일수</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                    </tr>
+                    <% if(trainingDates == null || trainingDates == 0) { %>
+                        <tr>
+                            <td class="noData" colspan="100">일정이 없습니다.</td>
+                        </tr>
+                    <% } %>
+                    <% trainingDates.forEach(function(trainingDate) { %>
+                        <% if(trainingDate.solutionName === '왈왈왈') { %>
+                            <tr>
+                                <td><span class="date"><%= trainingDate.startDate %></span> ~ <%= trainingDate.endDate %></td>
+                                <td><%= trainingDate.title %></td>
+                                <td>[ <%= trainingDate.period %>일 과정 ]</td>
+                                <td><%= trainingDate.time %></td>
+                                <td><%= trainingDate.place %></td>
+                            </tr>
+                        <% } %>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- //conteont -->
+</body>
+
+</html>

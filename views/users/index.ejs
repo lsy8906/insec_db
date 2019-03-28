@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../head %>
+</head>
+
+<body>
+    <% include ../nav %>
+    <!-- conteont -->
+    <div id="content">
+        <div class="section section1">
+            <div class="inner">
+                <% if (users == null || users.length == 0) { %>
+                    <div class="noData">가입된 유저가 없습니다.</div>
+                <% } %>
+                <% users.forEach(function(user) { %> 
+                    <div><%= user.username %></div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    <!-- //conteont -->
+</body>
+
+</html>

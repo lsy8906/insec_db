@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../head %>
+</head>
+
+<body>
+    <% include ../nav %>
+    <!-- conteont -->
+    <div id="content">
+        <div class="section section1">
+            <div class="inner">
+                <form action="/login" method="post">
+                    <h2>로그인</h2>
+                    <fieldset>
+                        <div class="<%= (errors.username)?'has-error':'' %>">
+                            <label for="username">아이디</label>
+                            <div>
+                                <input type="text" id="username" name="username" value="<%= username %>">
+                                <% if(errors.username){ %>
+                                <span><%= errors.username %></span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="<%= (errors.password)?'has-error':'' %>">
+                            <label for="password">비밀번호</label>
+                            <div>
+                                <input type="password" id="password" name="password" value="">
+                                <% if(errors.password){ %>
+                                <span><%= errors.password %></span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <% if(errors.login){ %>
+                        <div>
+                            <span><%= errors.login %></span>
+                        </div>
+                        <% } %>
+                    </fieldset>
+                    <div class="button">
+                        <input type="submit" value="로그인하기">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //conteont -->
+</body>
+
+</html>

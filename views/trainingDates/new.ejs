@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../head %>
+</head>
+
+<body>
+    <% include ../nav %>
+    <!-- conteont -->
+    <div id="content">
+        <div class="section section1">
+            <div class="inner">
+                <h2>인섹 교육 일정 DB</h2>
+                <form action="/trainingDates" method="post">
+                    <fieldset>
+                        <label for="solutionName">솔루션명</label>
+                        <select name="solutionName" id="solutionName">
+                            <option value="">선택해주세요.</option>
+                            <option value="멍멍멍">멍멍멍</option>
+                            <option value="왈왈왈">왈왈왈</option>
+                        </select>
+                        <label for="date">날짜</label>
+                        <input type="text" id="date" name="startDate" value=""> ~ <input type="text" id="date" name="endDate" value="">
+                        <label for="title">교육명</label>
+                        <input type="text" id="title" name="title" value="">
+                        <label for="period">수업일수</label>
+                        <input type="text" id="period" name="period" value="">
+                        <label for="time">시간</label>
+                        <input type="text" id="time" name="time" value="">
+                        <label for="place">장소</label>
+                        <input type="text" id="place" name="place" value="">
+                    </fieldset>
+                    <div class="button">
+                        <button type="submit">완료</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //conteont -->
+</body>
+
+</html>
